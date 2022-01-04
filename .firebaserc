@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "rashedy-team": {
+      "hosting": {
+        "rashedy_team": [
+          "rashedy-tech"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "rashedy-team"
+  }
+}

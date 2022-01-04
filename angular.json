@@ -103,6 +103,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "rashedy_team:build:production",
+            "firebaseProject": "rashedy-team",
+            "firebaseHostingSite": "rashedy-tech"
+          }
         }
       }
     }
