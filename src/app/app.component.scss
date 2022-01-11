@@ -1,0 +1,21 @@
+@import 'colors.scss';
+
+button.scroll-to-top{
+  bottom: 75px;
+  right: 20px;
+  z-index: 500;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all .5s ease;
+  height: 40px;
+  width: 40px;
+}
+
+button.scroll-to-top.show {
+  opacity: 1;
+  transform: translateY(0);
+  background-color: $primary;
+  border-color: $primary;
+  box-shadow: none;
+}
+

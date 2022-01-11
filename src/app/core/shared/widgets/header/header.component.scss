@@ -1,3 +1,11 @@
+@import 'colors.scss';
+header {
+  transition: box-shadow .5s ease, background-color .5s ease;
+  -webkit-transition: box-shadow .5s ease, background-color .5s ease;
+  -moz-transition: box-shadow .5s ease, background-color .5s ease;
+  -o-transition: box-shadow .5s ease, background-color .5s ease;
+  -ms-transition: box-shadow .5s ease, background-color .5s ease;
+}
 a {
-  color: black;
+  color: $dark;
 }
