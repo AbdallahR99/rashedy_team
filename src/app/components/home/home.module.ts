@@ -10,6 +10,8 @@ import { HomePortfolioComponent } from './home-portfolio/home-portfolio.componen
 import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
 import { HomeSkillCardComponent } from './home-skills/home-skill-card/home-skill-card.component';
 import { LazyLoadImageModule, LAZYLOAD_IMAGE_HOOKS, ScrollHooks } from 'ng-lazyload-image';
+import { FilterModule } from '@pipes/filter/filter.module';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 
 @NgModule({
@@ -26,6 +28,8 @@ import { LazyLoadImageModule, LAZYLOAD_IMAGE_HOOKS, ScrollHooks } from 'ng-lazyl
     HomeRoutingModule,
     NgxPageScrollCoreModule,
     LazyLoadImageModule,
+    FilterModule,
+    ModalModule.forRoot(),
   ],
   providers: [
     { provide: LAZYLOAD_IMAGE_HOOKS, useClass: ScrollHooks }

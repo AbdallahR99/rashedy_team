@@ -16,4 +16,6 @@ $transparent: transparent;
 @function shade($color, $percentage) {
   @return mix(black, $color, $percentage);
 }
-
+@function transparent($color, $opacity) {
+  @return mix($transparent, $color, $opacity);
+}

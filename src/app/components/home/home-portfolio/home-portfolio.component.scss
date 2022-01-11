@@ -1,0 +1,13 @@
+@import 'colors.scss';
+.portfolio-info {
+  opacity: 0;
+  background-color: transparent($primary, 50%);
+  transition: opacity 0.3s ease;
+  -webkit-transition: opacity 0.3s ease;
+  -moz-transition: opacity 0.3s ease;
+  -ms-transition: opacity 0.3s ease;
+  -o-transition: opacity 0.3s ease;
+}
+.portfolio-info:hover {
+  opacity: 1;
+}

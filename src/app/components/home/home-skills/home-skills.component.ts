@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Skill } from '@models/skill.model';
 
 @Component({
   selector: 'app-home-skills',
@@ -65,10 +66,3 @@ export class HomeSkillsComponent implements OnInit {
 
 }
 
-export interface Skill {
-  name: string;
-  description: string;
-  // svg only
-  icon: string;
-  color: string;
-}
