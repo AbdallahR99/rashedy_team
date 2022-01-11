@@ -40,7 +40,7 @@
           </p>
           <div class="d-flex justify-content-center gap-2">
             <div>
-              <div (click)="openModal(infoModal)" role="button" style="height: 25px; width: 25px;" class="rounded-circle btn btn-primary p-0 text-white d-flex align-items-center justify-content-center">
+              <div (click)="selectedProject = project; openModal(infoModal)" role="button" style="height: 25px; width: 25px;" class="rounded-circle btn btn-primary p-0 text-white d-flex align-items-center justify-content-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-info-lg" viewBox="0 0 16 16">
                   <path d="m9.708 6.075-3.024.379-.108.502.595.108c.387.093.464.232.38.619l-.975 4.577c-.255 1.183.14 1.74 1.067 1.74.72 0 1.554-.332 1.933-.789l.116-.549c-.263.232-.65.325-.905.325-.363 0-.494-.255-.402-.704l1.323-6.208Zm.091-2.755a1.32 1.32 0 1 1-2.64 0 1.32 1.32 0 0 1 2.64 0Z"/>
                 </svg>
@@ -69,13 +69,45 @@
 
 
 <ng-template #infoModal>
-  <div class="modal-header">
+  <!-- <div class="modal-header">
     <h4 class="modal-title pull-left">Modal</h4>
     <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
       <span aria-hidden="true" class="visually-hidden">&times;</span>
     </button>
-  </div>
+  </div> -->
   <div class="modal-body">
-    This is a modal.
+    <div class="d-flex justify-content-between">
+      <h4 class="text-wrap">
+        {{selectedProject?.name}}
+      </h4>
+      <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+        <span aria-hidden="true" class="visually-hidden">&times;</span>
+      </button>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-6 d-flex flex-column justify-content-between">
+        <p>
+          {{selectedProject?.description}}
+        </p>
+        <div>
+            <a class="btn btn-link" *ngIf="selectedProject.url" [href]="selectedProject.url" role="button">
+              <small class="d-flex align-items-baseline">
+                <span>
+                  Preview
+                  &nbsp;
+                </span>
+                <span class="material-icons d-flex small">
+                  open_in_new
+                </span>
+              </small>
+            </a>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div>
+          <img [lazyLoad]="selectedProject?.imageUrl ?? ''" class="img-fluid mh-100" [alt]="selectedProject.name">
+        </div>
+      </div>
+    </div>
   </div>
 </ng-template>

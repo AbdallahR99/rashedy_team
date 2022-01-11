@@ -11,6 +11,7 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 export class HomePortfolioComponent implements OnInit {
   modalRef?: BsModalRef;
   filterBy: '' | 'web' | 'mobile' | 'backend' = '';
+  selectedProject!: Project;
   projects: Project[] = [
     {
       name: 'Project 1',
