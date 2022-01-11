@@ -15,10 +15,14 @@ import { environment } from '../environments/environment';
 // import { provideRemoteConfig,getRemoteConfig } from '@angular/fire/remote-config';
 // import { provideStorage,getStorage } from '@angular/fire/storage';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HeaderComponent } from '@shared/widgets/header/header.component';
+import { FooterComponent } from '@shared/widgets/footer/footer.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
