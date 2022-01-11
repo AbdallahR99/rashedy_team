@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/rashedy_team",
+            "outputPath": "dist/rashedy_team/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -113,6 +113,65 @@
             "firebaseProject": "rashedy-team",
             "firebaseHostingSite": "rashedy-tech"
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/rashedy_team/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json",
+            "inlineStyleLanguage": "scss"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ]
+            },
+            "development": {
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "rashedy_team:build:development",
+              "serverTarget": "rashedy_team:server:development"
+            },
+            "production": {
+              "browserTarget": "rashedy_team:build:production",
+              "serverTarget": "rashedy_team:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "rashedy_team:build:production",
+              "serverTarget": "rashedy_team:server:production"
+            },
+            "development": {
+              "browserTarget": "rashedy_team:build:development",
+              "serverTarget": "rashedy_team:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }
