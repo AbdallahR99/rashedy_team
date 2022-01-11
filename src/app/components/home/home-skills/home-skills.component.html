@@ -1,8 +1,16 @@
 <div class="row">
-  <div class="col col-sm-6 col-md-4" *ngFor="let skill of skills">
+  <div class="col col-sm-6 col-md-4" *ngFor="let skill of skills; let i = index">
+    <div
+    data-aos="fade-up"
+    data-aos-offset="0"
+
+    [attr.data-aos-delay]="i * 200"
+    >
     <app-home-skill-card [skill]="skill">
 
     </app-home-skill-card>
+    </div>
+
   </div>
 
 </div>

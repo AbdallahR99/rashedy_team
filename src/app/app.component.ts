@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLoaderService } from '@services/routing/router-loader.service';
-
+import * as AOS from 'aos';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,5 +11,6 @@ export class AppComponent {
   constructor() {
     localStorage.setItem('test', 'test');
     console.log(localStorage.getItem('test'));
+    AOS.init();
   }
 }

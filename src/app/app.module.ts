@@ -19,6 +19,7 @@ import { HeaderComponent } from '@shared/widgets/header/header.component';
 import { FooterComponent } from '@shared/widgets/footer/footer.component';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
+import { LazyLoadImageModule, LAZYLOAD_IMAGE_HOOKS, ScrollHooks } from 'ng-lazyload-image';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     MatProgressBarModule,
+    LazyLoadImageModule,
     // provideFirebaseApp(() => initializeApp(environment.firebase)),
     // provideAnalytics(() => getAnalytics()),
     // provideAuth(() => getAuth()),
@@ -44,6 +46,7 @@ import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
     NgxPageScrollCoreModule.forRoot(),
   ],
   providers: [
+    { provide: LAZYLOAD_IMAGE_HOOKS, useClass: ScrollHooks }
     // ScreenTrackingService,
     // UserTrackingService
   ],
