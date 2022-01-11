@@ -1,2 +1,23 @@
-<a pageScroll href="#portfolio">header works!</a>
+<header class="p-4">
+  <ul class="list-unstyled nav gap-4">
+    <li>
+      <a pageScroll [routerLink]="[routes.Home]" [class.text-primary]="isLinkActive(routes.Home)">Home</a>
+    </li>
+    <li>
+      <a pageScroll [routerLink]="[routes.Home]" fragment="about"[class.text-primary]="isLinkActive(routes.Home + '#about')">About</a>
+    </li>
+    <li>
+      <a pageScroll [routerLink]="[routes.Home]" fragment="skills"[class.text-primary]="isLinkActive(routes.Home + '#skills')">Skills</a>
+    </li>
+    <li>
+      <a pageScroll [routerLink]="[routes.Home]" fragment="portfolio"[class.text-primary]="isLinkActive(routes.Home + '#portfolio')">portfolio</a>
+    </li>
+    <li>
+      <a pageScroll [routerLink]="[routes.Blog]" routerLinkActive="text-primary">Blog</a>
+    </li>
+    <li>
+      <a pageScroll href="#contact-us" routerLinkActive="text-primary">Contact Us</a>
+    </li>
+  </ul>
+</header>
 <mat-progress-bar *ngIf="$isLoading | async" mode="indeterminate"></mat-progress-bar>
