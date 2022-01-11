@@ -56,7 +56,7 @@ export class HomePortfolioComponent implements OnInit {
 
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template, {
-      class: 'modal-dialog-centered'
+      class: 'modal-dialog-centered modal-lg'
     });
   }
 
