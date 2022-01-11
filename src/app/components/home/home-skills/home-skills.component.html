@@ -1,1 +1,8 @@
-<p>home-skills works!</p>
+<div class="row">
+  <div class="col col-sm-6 col-md-4" *ngFor="let skill of skills">
+    <app-home-skill-card [skill]="skill">
+
+    </app-home-skill-card>
+  </div>
+
+</div>

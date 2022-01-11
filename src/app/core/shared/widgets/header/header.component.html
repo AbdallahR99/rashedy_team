@@ -1,22 +1,28 @@
 <header class="p-4">
   <ul class="list-unstyled nav gap-4">
     <li>
-      <a pageScroll [routerLink]="[routes.Home]" [class.text-primary]="isLinkActive(routes.Home)">Home</a>
+      <a pageScroll [routerLink]="[routes.Home]" [class.text-primary]="isLinkActive(routes.Home)"
+      class="text-decoration-none">Home</a>
     </li>
     <li>
-      <a pageScroll [routerLink]="[routes.Home]" fragment="about"[class.text-primary]="isLinkActive(routes.Home + '#about')">About</a>
+      <a pageScroll [routerLink]="[routes.Home]" fragment="about"[class.text-primary]="isLinkActive(routes.Home + '#about')"
+      class="text-decoration-none">About</a>
     </li>
     <li>
-      <a pageScroll [routerLink]="[routes.Home]" fragment="skills"[class.text-primary]="isLinkActive(routes.Home + '#skills')">Skills</a>
+      <a pageScroll [routerLink]="[routes.Home]" fragment="skills"[class.text-primary]="isLinkActive(routes.Home + '#skills')"
+      class="text-decoration-none">Skills</a>
     </li>
     <li>
-      <a pageScroll [routerLink]="[routes.Home]" fragment="portfolio"[class.text-primary]="isLinkActive(routes.Home + '#portfolio')">portfolio</a>
+      <a pageScroll [routerLink]="[routes.Home]" fragment="portfolio"[class.text-primary]="isLinkActive(routes.Home + '#portfolio')"
+      class="text-decoration-none">portfolio</a>
     </li>
     <li>
-      <a pageScroll [routerLink]="[routes.Blog]" routerLinkActive="text-primary">Blog</a>
+      <a pageScroll [routerLink]="[routes.Blog]" routerLinkActive="text-primary"
+      class="text-decoration-none">Blog</a>
     </li>
     <li>
-      <a pageScroll href="#contact-us" routerLinkActive="text-primary">Contact Us</a>
+      <a pageScroll href="#contact-us" routerLinkActive="text-primary"
+      class="text-decoration-none">Contact Us</a>
     </li>
   </ul>
 </header>

@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Routes } from '@constants/routes';
 import { RouterLoaderService } from '@services/routing/router-loader.service';
 import { Observable } from 'rxjs/internal/Observable';
@@ -19,15 +19,16 @@ export class HeaderComponent implements OnInit {
   get routes(): typeof Routes {
     return Routes;
   }
-  constructor(private routerLoaderService: RouterLoaderService, private activatedRoute: ActivatedRoute) { }
+  constructor(private routerLoaderService: RouterLoaderService, private router: Router) { }
   isLinkActive(url: string): boolean {
-    const currentUrl = (this.activatedRoute.snapshot.url.join('/') + ( this.activatedRoute.snapshot.fragment ? ('#' + this.activatedRoute.snapshot.fragment) : ''));
-      console.log(`param ${url}`, `url ${currentUrl}`, `this.activatedRoute.snapshot.fragment ${this.activatedRoute.snapshot.fragment}`, this.activatedRoute);
+    const currentUrl = this.router.url.substring(1);
     console.log(window);
 
     return (currentUrl === url);
   }
   ngOnInit(): void {
+    console.log(this.router);
+
   }
 
 }
