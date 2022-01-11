@@ -17,6 +17,8 @@ import { environment } from '../environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from '@shared/widgets/header/header.component';
 import { FooterComponent } from '@shared/widgets/footer/footer.component';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,7 @@ import { FooterComponent } from '@shared/widgets/footer/footer.component';
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
+    MatProgressBarModule,
     // provideFirebaseApp(() => initializeApp(environment.firebase)),
     // provideAnalytics(() => getAnalytics()),
     // provideAuth(() => getAuth()),
@@ -37,7 +40,8 @@ import { FooterComponent } from '@shared/widgets/footer/footer.component';
     // providePerformance(() => getPerformance()),
     // provideRemoteConfig(() => getRemoteConfig()),
     // provideStorage(() => getStorage()),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgxPageScrollCoreModule.forRoot(),
   ],
   providers: [
     // ScreenTrackingService,
