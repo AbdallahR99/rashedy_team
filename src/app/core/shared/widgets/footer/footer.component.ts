@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Routes } from '@constants/routes';
 
 @Component({
   selector: 'app-footer',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
+
+  get routes(): typeof Routes {
+    return Routes;
+  }
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onContactSubmit(form: NgForm): void {
+    console.log(form);
   }
 
 }

@@ -20,6 +20,7 @@ import { FooterComponent } from '@shared/widgets/footer/footer.component';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
 import { LazyLoadImageModule, LAZYLOAD_IMAGE_HOOKS, ScrollHooks } from 'ng-lazyload-image';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { LazyLoadImageModule, LAZYLOAD_IMAGE_HOOKS, ScrollHooks } from 'ng-lazyl
     // provideStorage(() => getStorage()),
     BrowserAnimationsModule,
     NgxPageScrollCoreModule.forRoot(),
+    FormsModule,
   ],
   providers: [
     { provide: LAZYLOAD_IMAGE_HOOKS, useClass: ScrollHooks }

@@ -1,5 +1,162 @@
-<a name="contact-us">
-  <footer id="contact-us">
-    <p>footer works!</p>
+
+  <footer id="contact-us" class="bg-light pt-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-6 row">
+          <div class="col-6">
+            <div>
+              <div class="display-6 text-dark">
+                RAPID
+              </div>
+              <p>
+                Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus. Scelerisque felis imperdiet proin fermentum leo. Amet volutpat consequat mauris nunc congue.
+              </p>
+            </div>
+            <div>
+              <h6 class="text-dark">
+                OUR NEWSLETTER
+              </h6>
+              <p>
+                Tamen quem nulla quae legam multos aute sint culpa legam noster magna veniam enim veniam illum dolore legam minim quorum culpa amet magna export quem.
+              </p>
+            </div>
+            <form class="py-2 d-flex">
+              <div class="input-group mb-3">
+                <input type="text" class="form-control form-control-sm rounded-0" placeholder="Email" aria-label="email" aria-describedby="subscribeButton">
+                <button class="btn btn-primary btn-sm text-white rounded-0" type="button" id="subscribeButton">Subscribe</button>
+              </div>
+            </form>
+          </div>
+          <div class="col-6">
+            <div>
+              <h6 class="text-dark">
+                USEFUL LINKS
+              </h6>
+              <ul class="footer-links list-unstyled">
+                <li class="my-3">
+                  <a pageScroll [routerLink]="[routes.Home]" fragment="portfolio">Home</a>
+                </li>
+                <li class="my-3">
+                  <a pageScroll [routerLink]="[routes.Home]" fragment="about">About</a>
+                </li>
+                <li class="my-3">
+                  <a pageScroll [routerLink]="[routes.Home]" fragment="skills">skills</a>
+                </li>
+                <li class="my-3">
+                  <a pageScroll [routerLink]="[routes.Home]" fragment="portfolio">portfolio</a>
+                </li>
+                <li class="my-3">
+                  <a pageScroll [routerLink]="[routes.Blog]">Blog</a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h6 class="text-dark">
+                CONTACT US
+              </h6>
+              <span class="address-info" [innerText]="'A108 Adam Street \n New York, NY 535022 \n United States'">
+              </span>
+
+              <div class="contact-info">
+                <strong>Phone:</strong>&nbsp;<span class="text-nowrap">+1 5589 55488 55</span>
+                <br>
+                <strong>Email:</strong>&nbsp;<span>info@example.com</span>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 d-flex flex-column px-3">
+          <h6 class="text-dark">
+            SEND US A MESSAGE
+          </h6>
+          <p>
+            Eos ipsa est voluptates. Nostrum nam libero ipsa vero. Debitis quasi sit eaque numquam similique commodi harum aut temporibus.
+          </p>
+          <div class="">
+            <form id="contact-us" #contactForm="ngForm" class=""
+            (ngSubmit)="onContactSubmit(contactForm)">
+             <div class="mb-3">
+               <input type="text"
+                 class="form-control form-control-sm"
+                 #fullName="ngModel" ngModel
+                 required minlength="4"
+                 name="fullName" id="fullName" placeholder="Your Name">
+                 <ng-container *ngIf="contactForm.submitted">
+                   <small class="text-danger" *ngIf="fullName.hasError('required')">
+                     Name is required
+                   </small>
+                   <small class="text-danger" *ngIf="fullName.hasError('minlength')">
+                     Name must be at least 4 characters
+                   </small>
+                 </ng-container>
+             </div>
+             <div class="mb-3">
+               <input type="email"
+                 class="form-control form-control-sm"
+                 #email="ngModel" ngModel
+                 required email
+                 name="email" id="email" placeholder="Your Email">
+                 <ng-container *ngIf="contactForm.submitted">
+                   <small class="text-danger" *ngIf="email.hasError('required')">
+                     Email is required
+                   </small>
+                   <small class="text-danger" *ngIf="email.hasError('email')">
+                     Not a valid email
+                   </small>
+                 </ng-container>
+             </div>
+             <div class="mb-3">
+               <input type="text"
+                 class="form-control form-control-sm"
+                 #subject="ngModel" ngModel
+                 required minlength="8"
+                 name="subject" id="subject" placeholder="You Subject">
+                 <ng-container *ngIf="contactForm.submitted">
+                   <small class="text-danger" *ngIf="subject.hasError('required')">
+                     Subject is required
+                   </small>
+                   <small class="text-danger" *ngIf="subject.hasError('minlength')">
+                     Subject must be at least 8 characters
+                   </small>
+                 </ng-container>
+             </div>
+             <div class="mb-3">
+
+               <textarea rows="6"
+                 class="form-control form-control-sm"
+                 #message="ngModel" ngModel
+                 required minlength="8"
+                 name="message" id="message" placeholder="You Message">
+               </textarea>
+                 <ng-container *ngIf="contactForm.submitted">
+                   <small class="text-danger" *ngIf="message.hasError('required')">
+                     Please write something for us
+                   </small>
+                   <small class="text-danger" *ngIf="message.hasError('minlength')">
+                     Message must be at least 8 characters
+                   </small>
+                 </ng-container>
+             </div>
+             <div class="mb-3">
+               <button class="btn btn-primary btn-sm mx-auto d-block px-3 text-white" type="submit">
+                 Submit
+               </button>
+             </div>
+           </form>
+          </div>
+          <a name="contact-us">
+
+        </a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright bg-white text-center py-4">
+      &copy; Copyright <strong>Rapid</strong>. All Rights Reserved
+    </div>
   </footer>
-</a>
+
+
+
