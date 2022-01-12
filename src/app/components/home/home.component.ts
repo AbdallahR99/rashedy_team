@@ -9,7 +9,7 @@ import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  host: {'class': 'd-flex flex-column'},
+  host: {'class': 'd-flex flex-column overflow-hidden'},
 })
 export class HomeComponent implements OnInit {
   // public active_fragment: BehaviorSubject<string> = new BehaviorSubject('');
