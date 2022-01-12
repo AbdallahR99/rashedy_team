@@ -13,50 +13,59 @@ export class HomeSkillsComponent implements OnInit {
     {
       name: 'Front-End Stack',
       description: `
-      HTML5, CSS3, Bootstrap, AJAX, LESS, SASS, JSON, JavaScript, JQuery, TypeScript. <br><span class="text-info"> Angular 4/8/10+ </span>
+      HTML5, CSS3, Bootstrap, AJAX, LESS, SASS, JSON, JavaScript, JQuery, TypeScript. <br><span class="text-primary"> Angular 4/8/10+ and Flutter </span>
       `,
       icon: '',
-      color: '#00bcd4',
+      color: '#ff689b',
     },
     {
-      name: 'Front-End Stack',
+      name: 'Back-End Stack',
       description: `
-      HTML5, CSS3, Bootstrap, AJAX, LESS, SASS, JSON, JavaScript, JQuery, TypeScript. <br><span class="text-color-blue"> Angular 4/8/10+ </span>
+      C#, SQL Server, Oracle, ADO.Net, Entity Framework, LINQ, AutoMapper, SignalR
+       <br /> <span class="text-primary"> C#,REST API, ASP.NET Core </span>
       `,
       icon: '',
-      color: '#00bcd4',
+      color: '#e98e06',
     },
     {
-      name: 'Front-End Stack',
+      name: 'Skills',
       description: `
-      HTML5, CSS3, Bootstrap, AJAX, LESS, SASS, JSON, JavaScript, JQuery, TypeScript. <br><span class="text-color-blue"> Angular 4/8/10+ </span>
+      Redis Cache, RabbitQ, Elastic Search, DTOs
+      <br />
+      <span class="text-primary">Report Tools: </span>  Crystal Reports,
+      Telerik Report, DevExpress.
       `,
       icon: '',
-      color: '#00bcd4',
+      color: '#3fcdc7',
     },
     {
-      name: 'Front-End Stack',
+      name: 'Advanced Skills',
       description: `
-      HTML5, CSS3, Bootstrap, AJAX, LESS, SASS, JSON, JavaScript, JQuery, TypeScript. <br><span class="text-color-blue"> Angular 4/8/10+ </span>
+      OOP, SOLID Principles, N-Tier Applications, Repository, DRY, DDD,
+      JWT Token, CI/CD Principles, Microsoft Azure, Docker, SEO.
       `,
       icon: '',
-      color: '#00bcd4',
+      color: '#41cf2e',
     },
     {
-      name: 'Front-End Stack',
+      name: 'Application Software',
       description: `
-      HTML5, CSS3, Bootstrap, AJAX, LESS, SASS, JSON, JavaScript, JQuery, TypeScript. <br><span class="text-color-blue"> Angular 4/8/10+ </span>
+      E-commerce Software, Enterprise Software, Bank Software,
+      Socail Media Software, CRM Software, PaaS, Custome Software.
       `,
       icon: '',
-      color: '#00bcd4',
+      color: '#2282ff',
     },
     {
-      name: 'Front-End Stack',
+      name: 'Version Control Tools & IDEs',
       description: `
-      HTML5, CSS3, Bootstrap, AJAX, LESS, SASS, JSON, JavaScript, JQuery, TypeScript. <br><span class="text-color-blue"> Angular 4/8/10+ </span>
+      Visual Studio, Visual Studio Code, Microsoft SQL Server,
+            SQL Developer.
+            <br>
+            Git, Bitbucket, Team Foundation Server(TFS)
       `,
       icon: '',
-      color: '#00bcd4',
+      color: '#8660fe',
     },
   ];
   constructor() { }

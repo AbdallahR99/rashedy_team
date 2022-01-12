@@ -1,21 +1,41 @@
+@import 'colors.scss';
+$colory: var(--skill-color);
 .skill-image {
   $skill-size: 40px;
   width: $skill-size;
   height: $skill-size;
+  background-color:  hsla(var(--skill-color), .05);
+  // background-color: tint($colory, 30%);
 }
 
 .skill-card {
   border-radius: 20px;
   box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
   transform: scale(1);
-  -webkit-transition: all 0.3s ease, box-shadow 0.3s ease;
-  -moz-transition: all 0.3s ease, box-shadow 0.3s ease;
-  -o-transition: all 0.3s ease, box-shadow 0.3s ease;
-  -ms-transition: all 0.3s ease, box-shadow 0.3s ease;
-  transition: all 0.3s ease, box-shadow 0.3s ease;
+  -webkit-transition: transform 0.3s ease, box-shadow 0.3s ease;
+  -moz-transition: transform 0.3s ease, box-shadow 0.3s ease;
+  -o-transition: transform 0.3s ease, box-shadow 0.3s ease;
+  -ms-transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  .skill-name {
+  -webkit-transition: color 0.3s ease;
+  -moz-transition: color 0.3s ease;
+  -o-transition: color 0.3s ease;
+  -ms-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+  color: $dark;
+  }
 }
 
 .skill-card:hover {
   transform: scale(1.05);
   box-shadow: 0 1rem 3rem rgb(0 0 0 / 18%);
+  .skill-name {
+    color: $primary;
+  }
+}
+
+p {
+  line-height: 28px;
+  font-size: 14px;
 }

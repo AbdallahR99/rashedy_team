@@ -1,10 +1,11 @@
-<div class="row g-5">
+<div class="row d-flex align-items-stretch g-5">
   <div class="col-12 col-sm-6 col-md-4" *ngFor="let skill of skills; let i = index">
     <div
     data-aos="fade-up"
     data-aos-offset="0"
 
     [attr.data-aos-delay]="i * 200"
+    class="h-100"
     >
     <app-home-skill-card [skill]="skill">
 
