@@ -28,7 +28,7 @@
   <ngx-masonry [options]="myOptions">
 
    <div ngxMasonryItem *ngFor="let project of projects | filter:filterBy:'tags':'contains';let i = index"
-   data-aos="fade-up" data-aos-duration="500" data-aos-offset="0"
+   data-aos="fade" data-aos-duration="500" data-aos-offset="0"
    class="col-lg-4 masonry-item col-md-6 portfolio-item p-2">
      <div class="position-relative">
        <div class="portfolio-info position-absolute bottom-0 top-0 start-0 end-0 d-flex align-items-center justify-content-center flex-column">
@@ -77,39 +77,6 @@
       <span aria-hidden="true" class="visually-hidden">&times;</span>
     </button>
   </div> -->
-  <div class="modal-body">
-    <div class="d-flex justify-content-between">
-      <h4 class="text-wrap">
-        {{selectedProject?.name}}
-      </h4>
-      <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
-        <span aria-hidden="true" class="visually-hidden">&times;</span>
-      </button>
-    </div>
-    <div class="row" >
-      <div class="col-12 col-md-6 d-flex flex-column justify-content-between">
-        <p>
-          {{selectedProject?.description}}
-        </p>
-        <div>
-            <a class="btn btn-link" *ngIf="selectedProject.url" [href]="selectedProject.url" role="button">
-              <small class="d-flex align-items-baseline">
-                <span>
-                  Preview
-                  &nbsp;
-                </span>
-                <span class="material-icons d-flex small">
-                  open_in_new
-                </span>
-              </small>
-            </a>
-        </div>
-      </div>
-      <div class="col-12 col-md-6">
-        <div>
-          <img [lazyLoad]="selectedProject?.imagesUrl![0] ?? ''" class="img-fluid mh-100" [alt]="selectedProject.name">
-        </div>
-      </div>
-    </div>
-  </div>
+  <app-home-portfolio-modal [project]="selectedProject" (closeModal)="modalRef?.hide()"></app-home-portfolio-modal>
+
 </ng-template>

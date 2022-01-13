@@ -26,12 +26,12 @@ export class HeaderComponent implements OnInit {
     @Inject(DOCUMENT) private document: Document) { }
   isLinkActive(url: string): boolean {
     const currentUrl = this.router.url.substring(1);
-    console.log(window);
+    // console.log(window);
 
     return (currentUrl === url);
   }
   ngOnInit(): void {
-    console.log(this.router);
+    // console.log(this.router);
   }
 
   @HostListener('window:scroll', ['$event'])

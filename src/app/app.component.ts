@@ -11,7 +11,7 @@ export class AppComponent {
   @ViewChild('scrollToTopButton') scrollToTopButton!: ElementRef<HTMLButtonElement>;
   constructor(@Inject(DOCUMENT) private document: Document) {
     localStorage.setItem('test', 'test');
-    console.log(localStorage.getItem('test'));
+    // console.log(localStorage.getItem('test'));
     AOS.init();
   }
 

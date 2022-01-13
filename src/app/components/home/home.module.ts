@@ -13,6 +13,9 @@ import { LazyLoadImageModule, LAZYLOAD_IMAGE_HOOKS, ScrollHooks } from 'ng-lazyl
 import { FilterModule } from '@pipes/filter/filter.module';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { NgxMasonryModule } from 'ngx-masonry';
+import { HomePortfolioModalComponent } from './home-portfolio/home-portfolio-modal/home-portfolio-modal.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 
 @NgModule({
@@ -23,6 +26,7 @@ import { NgxMasonryModule } from 'ngx-masonry';
     HomeSkillsComponent,
     HomePortfolioComponent,
     HomeSkillCardComponent,
+    HomePortfolioModalComponent,
   ],
   imports: [
     CommonModule,
@@ -32,6 +36,8 @@ import { NgxMasonryModule } from 'ngx-masonry';
     FilterModule,
     NgxMasonryModule ,
     ModalModule.forRoot(),
+    CarouselModule ,
+    MatDialogModule,
   ],
   providers: [
     { provide: LAZYLOAD_IMAGE_HOOKS, useClass: ScrollHooks }

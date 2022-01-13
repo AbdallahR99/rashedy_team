@@ -1,5 +1,7 @@
 import { animate, style } from '@angular/animations';
 import { ChangeDetectionStrategy, Component, OnInit, TemplateRef } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Project } from '@models/project.model';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { NgxMasonryOptions } from 'ngx-masonry';
@@ -23,6 +25,7 @@ export class HomePortfolioComponent implements OnInit {
       ]
     },
 
+
   };
   modalRef?: BsModalRef;
   filterBy: '' | 'web' | 'mobile' | 'backend' = '';
@@ -33,6 +36,7 @@ export class HomePortfolioComponent implements OnInit {
       description: 'Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello ',
       imagesUrl: ['assets/img/portfolio/business/business.png','assets/img/portfolio//business/business1.png',
       'assets/img/portfolio//business/business3.png', 'assets/img/portfolio//business/business.png'],
+      videosUrl: ['tgbNymZ7vqY', 'A0GuKuk7IxE'],
       url: 'https://www.google.com',
       tags: ['web', 'mobile', 'backend'],
     },
@@ -41,6 +45,7 @@ export class HomePortfolioComponent implements OnInit {
       description: 'test details',
       imagesUrl: ['assets/img/portfolio/kolomashy/home.png','assets/img/portfolio/kolomashy/kolo1.png',
               'assets/img/portfolio/kolomashy/kolo2.png', 'assets/img/portfolio/kolomashy/kolo3.png'],
+
       url: 'https://www.google.com',
       tags: ['web', 'backend', 'mobile'],
     },
@@ -77,10 +82,13 @@ export class HomePortfolioComponent implements OnInit {
       tags: ['mobile', 'web', 'backend'],
     },
   ]
-  constructor(private modalService: BsModalService) { }
+  constructor(private modalService: BsModalService,
+
+    public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
+
 
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template, {

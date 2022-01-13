@@ -2,7 +2,6 @@ import { DOCUMENT } from '@angular/common';
 import { ChangeDetectionStrategy, Component, HostListener, Inject, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PageScrollService } from 'ngx-page-scroll-core';
-import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 
 @Component({
   selector: 'app-home',
@@ -28,7 +27,7 @@ export class HomeComponent implements OnInit {
     }
 
   ngOnInit(): void {
-    console.log(this.activatedRoute);
+    // console.log(this.activatedRoute);
 
     this.pageScrollService.scroll({
       document: this.document,
