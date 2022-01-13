@@ -6,7 +6,7 @@
 
 .phone {
   position: relative;
-  width: 112.5px;
+  width: 105.8px;
   height: 200px;
   left: -13px;
 }
@@ -20,7 +20,7 @@
 
 .phone .notch-container .notch {
   width: 51px;
-  height: 13px;
+  height: 11px;
   margin: 0 auto;
   background-color: tint($dark, 90%);
   border-bottom-left-radius: 0.3rem;
@@ -31,16 +31,9 @@
   display: block;
   border: 0.3rem solid tint($dark, 90%);
   border-radius: 0.8rem;
+  width: 100%;
+
 }
-
-
-
-
-
-
-
-
-
 .screen,
 .screen img {
   height: 100%;
@@ -50,7 +43,7 @@
 
 .screen {
   position: relative;
-  width: 400px;
+  width: 281.25px;
   height: 225px;
 
 }

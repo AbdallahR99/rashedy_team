@@ -61,6 +61,7 @@ export class HomePortfolioComponent implements OnInit {
     {
       name: 'RitzLine',
       description: '',
+      mobileOnly: true,
       imagesUrl: ['assets/img/portfolio/ritzline/ritzline_pc.jpeg', 'assets/img/portfolio/ritzline/ritzline.png','assets/img/portfolio/ritzline/ritzline1.png',
                 'assets/img/portfolio/ritzline/ritzline2.png', 'assets/img/portfolio/ritzline/ritzline3.png'],
       mobileImgUrl: 'assets/img/portfolio/ritzline/1.png',

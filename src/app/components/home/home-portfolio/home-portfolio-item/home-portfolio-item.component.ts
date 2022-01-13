@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Project } from '@models/project.model';
 
 @Component({
@@ -9,9 +9,14 @@ import { Project } from '@models/project.model';
 })
 export class HomePortfolioItemComponent implements OnInit {
   @Input() project!: Project;
+  @Output() onOpenModal = new EventEmitter<Project>();
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  openModal() {
+    this.onOpenModal.emit(this.project);
   }
 
 }
