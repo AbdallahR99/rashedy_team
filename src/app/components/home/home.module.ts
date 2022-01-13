@@ -16,6 +16,7 @@ import { NgxMasonryModule } from 'ngx-masonry';
 import { HomePortfolioModalComponent } from './home-portfolio/home-portfolio-modal/home-portfolio-modal.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { HomePortfolioItemComponent } from './home-portfolio/home-portfolio-item/home-portfolio-item.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
     HomePortfolioComponent,
     HomeSkillCardComponent,
     HomePortfolioModalComponent,
+    HomePortfolioItemComponent,
   ],
   imports: [
     CommonModule,

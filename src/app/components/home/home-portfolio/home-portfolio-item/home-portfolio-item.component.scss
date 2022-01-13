@@ -1,0 +1,65 @@
+@import 'colors.scss';
+.phone,
+.phone img {
+  height: 100%;
+}
+
+.phone {
+  position: relative;
+  width: 112.5px;
+  height: 200px;
+  left: -13px;
+}
+
+.phone .notch-container {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100px;
+}
+
+.phone .notch-container .notch {
+  width: 51px;
+  height: 13px;
+  margin: 0 auto;
+  background-color: tint($dark, 90%);
+  border-bottom-left-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
+}
+
+.phone img {
+  display: block;
+  border: 0.3rem solid tint($dark, 90%);
+  border-radius: 0.8rem;
+}
+
+
+
+
+
+
+
+
+
+.screen,
+.screen img {
+  height: 100%;
+  max-width: 100%;
+
+}
+
+.screen {
+  position: relative;
+  width: 400px;
+  height: 225px;
+
+}
+.screen img {
+  display: block;
+  border: 0.3rem solid tint($dark, 90%);
+  border-radius: 0.8rem;
+  width: inherit;
+  max-width: 100%;
+  height: 100%;
+
+}

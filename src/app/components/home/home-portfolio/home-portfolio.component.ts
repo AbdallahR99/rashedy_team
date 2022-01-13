@@ -1,10 +1,10 @@
 import { animate, style } from '@angular/animations';
-import { ChangeDetectionStrategy, Component, OnInit, TemplateRef } from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostListener, OnInit, TemplateRef } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Project } from '@models/project.model';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { NgxMasonryOptions } from 'ngx-masonry';
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-home-portfolio',
@@ -89,6 +89,10 @@ export class HomePortfolioComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  @HostListener('window:resize', ['$event']) onResize(event: any) {
+    AOS.refreshHard();
+    AOS.init();
+  }
 
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template, {

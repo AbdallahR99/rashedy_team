@@ -24,20 +24,26 @@
       </a>
     </li>
   </ul>
+  <div class="row g-4">
+    <div class="col-12 col-md-6 col-lg-6" *ngFor="let project of projects | filter:filterBy:'tags':'contains';let i = index">
+      <div data-aos="fade-up" data-aos-duration="500" data-aos-offset="0" [attr.data-aos-delay]="i * 200">
+        <app-home-portfolio-item [project]="project"></app-home-portfolio-item>
+
+      </div>
+    </div>
+
+  </div>
   <!-- data-aos="fade-left" data-aos-duration="500" data-aos-offset="0" [attr.data-aos-delay]="i * 200" -->
-  <ngx-masonry [options]="myOptions">
+  <!-- <ngx-masonry [options]="myOptions">
 
    <div ngxMasonryItem *ngFor="let project of projects | filter:filterBy:'tags':'contains';let i = index"
-   data-aos="fade" data-aos-duration="500" data-aos-offset="0"
+
    class="col-lg-4 masonry-item col-md-6 portfolio-item p-2">
      <div class="position-relative">
        <div class="portfolio-info position-absolute bottom-0 top-0 start-0 end-0 d-flex align-items-center justify-content-center flex-column">
          <h4 class="text-white">
            {{ project.name }}
          </h4>
-         <!-- <p class="text-white">
-           {{ project.description }}
-         </p> -->
          <div class="d-flex justify-content-center gap-2">
            <div>
              <div (click)="selectedProject = project; openModal(infoModal)" role="button" style="height: 25px; width: 25px;" class="rounded-circle btn btn-primary p-0 text-white d-flex align-items-center justify-content-center">
@@ -60,8 +66,10 @@
      </div>
      <div class="clearfix"></div>
    </div>
-  </ngx-masonry>
+  </ngx-masonry> -->
 
+
+<div class="p-2" id="portfolio"></div>
 
 </div>
 

@@ -6,7 +6,7 @@ import { Skill } from '@models/skill.model';
   templateUrl: './home-skills.component.html',
   styleUrls: ['./home-skills.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  host: {'class': 'py-5 container d-flex'}
+  host: {'class': 'py-5 container d-flex flex-column'}
 })
 export class HomeSkillsComponent implements OnInit {
   skills: Skill[] = [
