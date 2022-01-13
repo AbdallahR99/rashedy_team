@@ -7,11 +7,11 @@
     <div class="screen">
       <img  [src]="project.imagesUrl[0]" alt="">
     </div>
-    <div class="phone">
+    <div *ngIf="project.mobileImgUrl" class="phone">
       <div class="notch-container">
             <div class="notch"></div>
       </div>
-      <img class="img-fluid" [src]="project.imagesUrl[0]" alt="">
+      <img class="img-fluid" [src]="project.mobileImgUrl" alt="">
     </div>
   </div>
 
