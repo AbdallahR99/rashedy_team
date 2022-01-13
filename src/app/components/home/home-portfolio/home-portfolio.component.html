@@ -25,10 +25,10 @@
     </li>
   </ul>
   <!-- data-aos="fade-left" data-aos-duration="500" data-aos-offset="0" [attr.data-aos-delay]="i * 200" -->
-  <ngx-masonry>
+  <ngx-masonry [options]="myOptions">
 
    <div ngxMasonryItem *ngFor="let project of projects | filter:filterBy:'tags':'contains';let i = index"
-   data-aos="fade-left" data-aos-duration="500" data-aos-offset="0" [attr.data-aos-delay]="i * 200"
+   data-aos="fade-up" data-aos-duration="500" data-aos-offset="0"
    class="col-lg-4 masonry-item col-md-6 portfolio-item p-2">
      <div class="position-relative">
        <div class="portfolio-info position-absolute bottom-0 top-0 start-0 end-0 d-flex align-items-center justify-content-center flex-column">

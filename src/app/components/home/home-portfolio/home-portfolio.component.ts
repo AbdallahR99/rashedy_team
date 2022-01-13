@@ -1,6 +1,8 @@
+import { animate, style } from '@angular/animations';
 import { ChangeDetectionStrategy, Component, OnInit, TemplateRef } from '@angular/core';
 import { Project } from '@models/project.model';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { NgxMasonryOptions } from 'ngx-masonry';
 
 @Component({
   selector: 'app-home-portfolio',
@@ -9,6 +11,19 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomePortfolioComponent implements OnInit {
+  public myOptions: NgxMasonryOptions = {
+    animations: {
+      show: [
+        style({opacity: 0}),
+        animate('500ms ease-in', style({opacity: 1})),
+      ],
+      hide: [
+        style({opacity: '*'}),
+        animate('500ms ease-in', style({opacity: 0})),
+      ]
+    },
+
+  };
   modalRef?: BsModalRef;
   filterBy: '' | 'web' | 'mobile' | 'backend' = '';
   selectedProject!: Project;
