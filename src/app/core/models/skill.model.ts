@@ -3,5 +3,6 @@ export interface Skill {
   description: string;
   // svg only
   icon: string;
-  color: string;
+  iconColor: string;
+
 }

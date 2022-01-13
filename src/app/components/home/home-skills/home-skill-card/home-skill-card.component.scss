@@ -4,7 +4,7 @@ $colory: var(--skill-color);
   $skill-size: 40px;
   width: $skill-size;
   height: $skill-size;
-  background-color:  hsla(var(--skill-color), .05);
+  background-color: var(--skill-color);
   // background-color: tint($colory, 30%);
 }
 

@@ -1,29 +1,60 @@
 <header #navbar class="p-4 text-end">
-  <ul class="list-unstyled nav gap-4 d-inline-flex">
+  <ul class="list-unstyled nav gap-4 d-none d-md-inline-flex">
     <li>
       <a pageScroll [routerLink]="[routes.Home]" [class.text-primary]="isLinkActive(routes.Home)"
       class="text-decoration-none">Home</a>
     </li>
     <li>
-      <a pageScroll [routerLink]="[routes.Home]" fragment="about"[class.text-primary]="isLinkActive(routes.Home + '#about')"
+      <a pageScroll [routerLink]="[routes.Home]" fragment="about" [class.text-primary]="isLinkActive(routes.Home + '#about')"
       class="text-decoration-none">About</a>
     </li>
     <li>
-      <a pageScroll [routerLink]="[routes.Home]" fragment="skills"[class.text-primary]="isLinkActive(routes.Home + '#skills')"
+      <a pageScroll [routerLink]="[routes.Home]" fragment="skills" [class.text-primary]="isLinkActive(routes.Home + '#skills')"
       class="text-decoration-none">Skills</a>
     </li>
     <li>
-      <a pageScroll [routerLink]="[routes.Home]" fragment="portfolio"[class.text-primary]="isLinkActive(routes.Home + '#portfolio')"
+      <a pageScroll [routerLink]="[routes.Home]" fragment="portfolio" [class.text-primary]="isLinkActive(routes.Home + '#portfolio')"
       class="text-decoration-none">portfolio</a>
     </li>
-    <li>
+    <!-- <li>
       <a pageScroll [routerLink]="[routes.Blog]" routerLinkActive="text-primary"
       class="text-decoration-none">Blog</a>
-    </li>
+    </li> -->
     <li>
       <a pageScroll href="#contact-us" routerLinkActive="text-primary"
       class="text-decoration-none">Contact Us</a>
     </li>
   </ul>
+  <span role="button" (click)="isCollapsed = !isCollapsed" class="material-icons text-{{isCollapsed? 'dark' : 'white'}} d-md-none nav-toggle">
+    {{isCollapsed ? 'menu' : 'close'}}
+  </span>
+  <div class="mob-nav" [class.open]="!isCollapsed">
+    <ul class="nav-list list-unstyled nav flex-column justify-content-center align-content-center text-center py-5 gap-5">
+      <li>
+        <a pageScroll [routerLink]="[routes.Home]" (click)="isCollapsed = true" [class.text-primary]="isLinkActive(routes.Home)"
+        class="text-decoration-none">Home</a>
+      </li>
+      <li>
+        <a pageScroll [routerLink]="[routes.Home]" (click)="isCollapsed = true" fragment="about" [class.text-primary]="isLinkActive(routes.Home + '#about')"
+        class="text-decoration-none">About</a>
+      </li>
+      <li>
+        <a pageScroll [routerLink]="[routes.Home]" (click)="isCollapsed = true" fragment="skills" [class.text-primary]="isLinkActive(routes.Home + '#skills')"
+        class="text-decoration-none">Skills</a>
+      </li>
+      <li>
+        <a pageScroll [routerLink]="[routes.Home]" (click)="isCollapsed = true" fragment="portfolio" [class.text-primary]="isLinkActive(routes.Home + '#portfolio')"
+        class="text-decoration-none">portfolio</a>
+      </li>
+      <!-- <li>
+        <a pageScroll [routerLink]="[routes.Blog]" (click)="isCollapsed = true" routerLinkActive="text-primary"
+        class="text-decoration-none">Blog</a>
+      </li> -->
+      <li>
+        <a pageScroll href="#contact-us" routerLinkActive="text-primary"
+        class="text-decoration-none">Contact Us</a>
+      </li>
+    </ul>
+  </div>
 </header>
 <mat-progress-bar *ngIf="$isLoading | async" mode="indeterminate"></mat-progress-bar>

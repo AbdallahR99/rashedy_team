@@ -16,7 +16,7 @@ export class HomeSkillsComponent implements OnInit {
       HTML5, CSS3, Bootstrap, AJAX, LESS, SASS, JSON, JavaScript, JQuery, TypeScript. <br><span class="text-primary"> Angular 4/8/10+ and Flutter </span>
       `,
       icon: '',
-      color: '#ff689b',
+      iconColor: '#ff689b',
     },
     {
       name: 'Back-End Stack',
@@ -25,7 +25,7 @@ export class HomeSkillsComponent implements OnInit {
        <br /> <span class="text-primary"> C#,REST API, ASP.NET Core </span>
       `,
       icon: '',
-      color: '#e98e06',
+      iconColor: '#e98e06',
     },
     {
       name: 'Skills',
@@ -36,7 +36,7 @@ export class HomeSkillsComponent implements OnInit {
       Telerik Report, DevExpress.
       `,
       icon: '',
-      color: '#3fcdc7',
+      iconColor: '#3fcdc7',
     },
     {
       name: 'Advanced Skills',
@@ -45,7 +45,7 @@ export class HomeSkillsComponent implements OnInit {
       JWT Token, CI/CD Principles, Microsoft Azure, Docker, SEO.
       `,
       icon: '',
-      color: '#41cf2e',
+      iconColor: '#41cf2e',
     },
     {
       name: 'Application Software',
@@ -54,7 +54,7 @@ export class HomeSkillsComponent implements OnInit {
       Socail Media Software, CRM Software, PaaS, Custome Software.
       `,
       icon: '',
-      color: '#2282ff',
+      iconColor: '#2282ff',
     },
     {
       name: 'Version Control Tools & IDEs',
@@ -65,7 +65,7 @@ export class HomeSkillsComponent implements OnInit {
             Git, Bitbucket, Team Foundation Server(TFS)
       `,
       icon: '',
-      color: '#8660fe',
+      iconColor: '#8660fe',
     },
   ];
   constructor() { }

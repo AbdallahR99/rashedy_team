@@ -1,7 +1,13 @@
 @import 'colors.scss';
 
+.main-p {
+  color: tint($dark, 10%);
+  line-height: 24px;
+  font-size: 13px;
+}
+
 .footer-links li a {
-  color: $dark;
+  color: tint($dark, 20%);
   text-decoration: none;
   transition: color 0.5s ease;
   -webkit-transition: color 0.5s ease;

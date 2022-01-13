@@ -12,6 +12,8 @@ import { Observable } from 'rxjs/internal/Observable';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent implements OnInit {
+  isCollapsed = true;
+
   @ViewChild('navbar') navbar!: ElementRef<HTMLButtonElement>;
 
   get $isLoading(): Observable<boolean> {

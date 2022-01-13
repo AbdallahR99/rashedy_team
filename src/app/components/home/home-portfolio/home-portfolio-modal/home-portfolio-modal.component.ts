@@ -1,8 +1,6 @@
-import { Component, EventEmitter, Inject, Input, OnInit, Output } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { Project } from '@models/project.model';
-import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
   selector: 'app-home-portfolio-modal',
@@ -22,7 +20,6 @@ export class HomePortfolioModalComponent implements OnInit {
         this.updateVideoUrl(video as string)
       )!;
     }
-    debugger;
     this._project = data;
   }
   @Output() closeModal = new EventEmitter<never>();
@@ -37,10 +34,6 @@ export class HomePortfolioModalComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  safeURL(url: string): SafeResourceUrl {
-    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
-  }
-
   goToImage(path: string){
     window.open(path,'_blank');
   }
@@ -50,10 +43,6 @@ export class HomePortfolioModalComponent implements OnInit {
   }
 
   updateVideoUrl(id: string) {
-    // Appending an ID to a YouTube URL is safe.
-    // Always make sure to construct SafeValue objects as
-    // close as possible to the input data so
-    // that it's easier to check if the value is safe.
     const dangerousVideoUrl = 'https://www.youtube.com/embed/' + id;
     return  this.sanitizer.bypassSecurityTrustResourceUrl(dangerousVideoUrl);
   }

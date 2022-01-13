@@ -1,12 +1,12 @@
 <div style="padding: 30px;"
-class=" bg-white my-2 skill-card">
+class="h-100 bg-white my-2 skill-card">
   <div class="text-center">
-    <div class="rounded-circle m-auto d-inline-flex skill-image mb-3" style="--skill-color: {{skill?.color}};">
+    <div class="rounded-circle m-auto d-inline-flex skill-image mb-3" style="--skill-color: {{skill?.iconColor}};">
 
     </div>
-    <h4 class="mb-4 skill-name">
+    <h5 class="mb-4 skill-name fw-bold text-dark">
       {{skill?.name}}
-    </h4>
+    </h5>
     <p class="text-start" [innerHTML]="skill?.description"></p>
   </div>
 </div>
