@@ -24,43 +24,45 @@
       </a>
     </li>
   </ul>
+  <!-- data-aos="fade-left" data-aos-duration="500" data-aos-offset="0" [attr.data-aos-delay]="i * 200" -->
+  <ngx-masonry>
+
+   <div ngxMasonryItem *ngFor="let project of projects | filter:filterBy:'tags':'contains';let i = index"
+   data-aos="fade-left" data-aos-duration="500" data-aos-offset="0" [attr.data-aos-delay]="i * 200"
+   class="col-lg-4 masonry-item col-md-6 portfolio-item p-2">
+     <div class="position-relative">
+       <div class="portfolio-info position-absolute bottom-0 top-0 start-0 end-0 d-flex align-items-center justify-content-center flex-column">
+         <h4 class="text-white">
+           {{ project.name }}
+         </h4>
+         <!-- <p class="text-white">
+           {{ project.description }}
+         </p> -->
+         <div class="d-flex justify-content-center gap-2">
+           <div>
+             <div (click)="selectedProject = project; openModal(infoModal)" role="button" style="height: 25px; width: 25px;" class="rounded-circle btn btn-primary p-0 text-white d-flex align-items-center justify-content-center">
+               <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-info-lg" viewBox="0 0 16 16">
+                 <path d="m9.708 6.075-3.024.379-.108.502.595.108c.387.093.464.232.38.619l-.975 4.577c-.255 1.183.14 1.74 1.067 1.74.72 0 1.554-.332 1.933-.789l.116-.549c-.263.232-.65.325-.905.325-.363 0-.494-.255-.402-.704l1.323-6.208Zm.091-2.755a1.32 1.32 0 1 1-2.64 0 1.32 1.32 0 0 1 2.64 0Z"/>
+               </svg>
+             </div>
+           </div>
+           <a *ngIf="project.url">
+             <a [href]="project.url" target="_blank" style="height: 25px; width: 25px;" class="rounded-circle btn btn-primary p-0 text-white d-flex align-items-center justify-content-center">
+               <span class="material-icons d-flex" style="font-size: 18px;">
+                 open_in_new
+               </span>
+
+             </a>
+           </a>
+         </div>
+       </div>
+       <img  [src]="project.imagesUrl[0]" class="mh-100 img-fluid m-auto">
+     </div>
+     <div class="clearfix"></div>
+   </div>
+  </ngx-masonry>
 
 
-  <div class="row d-flex position-relative flex-wrap">
-    <div *ngFor="let project of projects | filter:filterBy:'tags':'contains';let i = index"
-    data-aos="fade-left" data-aos-duration="500" data-aos-offset="0" [attr.data-aos-delay]="i * 200"
-    class="col-lg-4 col-md-6 portfolio-item p-2">
-      <div class="position-relative">
-        <div class="portfolio-info position-absolute bottom-0 top-0 start-0 end-0 d-flex align-items-center justify-content-center flex-column">
-          <h4 class="text-white">
-            {{ project.name }}
-          </h4>
-          <!-- <p class="text-white">
-            {{ project.description }}
-          </p> -->
-          <div class="d-flex justify-content-center gap-2">
-            <div>
-              <div (click)="selectedProject = project; openModal(infoModal)" role="button" style="height: 25px; width: 25px;" class="rounded-circle btn btn-primary p-0 text-white d-flex align-items-center justify-content-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-info-lg" viewBox="0 0 16 16">
-                  <path d="m9.708 6.075-3.024.379-.108.502.595.108c.387.093.464.232.38.619l-.975 4.577c-.255 1.183.14 1.74 1.067 1.74.72 0 1.554-.332 1.933-.789l.116-.549c-.263.232-.65.325-.905.325-.363 0-.494-.255-.402-.704l1.323-6.208Zm.091-2.755a1.32 1.32 0 1 1-2.64 0 1.32 1.32 0 0 1 2.64 0Z"/>
-                </svg>
-              </div>
-            </div>
-            <a *ngIf="project.url">
-              <a [href]="project.url" target="_blank" style="height: 25px; width: 25px;" class="rounded-circle btn btn-primary p-0 text-white d-flex align-items-center justify-content-center">
-                <span class="material-icons d-flex" style="font-size: 18px;">
-                  open_in_new
-                </span>
-
-              </a>
-            </a>
-          </div>
-        </div>
-        <img [lazyLoad]="project.imagesUrl[0]" class="mh-100 img-fluid m-auto">
-      </div>
-      <div class="clearfix"></div>
-    </div>
-  </div>
 </div>
 
 
@@ -84,7 +86,7 @@
         <span aria-hidden="true" class="visually-hidden">&times;</span>
       </button>
     </div>
-    <div class="row">
+    <div class="row" >
       <div class="col-12 col-md-6 d-flex flex-column justify-content-between">
         <p>
           {{selectedProject?.description}}

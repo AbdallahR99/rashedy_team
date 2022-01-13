@@ -12,6 +12,7 @@ import { HomeSkillCardComponent } from './home-skills/home-skill-card/home-skill
 import { LazyLoadImageModule, LAZYLOAD_IMAGE_HOOKS, ScrollHooks } from 'ng-lazyload-image';
 import { FilterModule } from '@pipes/filter/filter.module';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { NgxMasonryModule } from 'ngx-masonry';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     NgxPageScrollCoreModule,
     LazyLoadImageModule,
     FilterModule,
+    NgxMasonryModule ,
     ModalModule.forRoot(),
   ],
   providers: [
