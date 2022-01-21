@@ -1,6 +1,7 @@
 import { SafeResourceUrl } from "@angular/platform-browser";
 
 export interface Project {
+  id: string;
   name: string;
   shortDescription?: string;
   description: string;

@@ -1,4 +1,5 @@
-export class Routes {
-  static readonly Home = '';
-  static readonly Blog = '/blog';
+export enum Routes {
+  Home = '/',
+  Blog = '/blog',
+  ProjectDetails = '/project-details',
 }

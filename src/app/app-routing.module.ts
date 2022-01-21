@@ -5,6 +5,7 @@ import { Routes as r } from '@constants/routes';
 const routes: Routes = [
   { path: r.Home.substring(1), loadChildren: () => import('./components/home/home.module').then(m => m.HomeModule) },
   { path: r.Blog.substring(1), loadChildren: () => import('./components/blog/blog.module').then(m => m.BlogModule) },
+  { path: r.ProjectDetails.substring(1) + '/:projectName', loadChildren: () => import('./components/project-details/project-details.module').then(m => m.ProjectDetailsModule) },
   { path: '', redirectTo:  r.Home, pathMatch: 'full' },
   { path: '**', redirectTo:  r.Home, pathMatch: 'full' },
   { path: '*', redirectTo:  r.Home, pathMatch: 'full' },

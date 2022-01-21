@@ -43,7 +43,6 @@ import { HomePortfolioItemComponent } from './home-portfolio/home-portfolio-item
   ],
   providers: [
     { provide: LAZYLOAD_IMAGE_HOOKS, useClass: ScrollHooks }
-
   ]
 })
 export class HomeModule { }

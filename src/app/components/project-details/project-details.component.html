@@ -1,0 +1,43 @@
+<div class="p-4"></div>
+ <div *ngIf="!isError" class="container fadeIn animated">
+  <div class="card bg-light p-2 my-3">
+    <div class="row">
+      <div class="col-12 col-sm-5 col-md-3">
+        <a [href]="'/'+ project.imagesUrl[0]" target="_blank">
+          <img [src]="project.imagesUrl[0]" [alt]="project.name + ' web'" class="img-fluid mh-100">
+        </a>
+      </div>
+      <div class="col-12 col-sm-7 col-md-9">
+        <h1 class="mb-3">
+          {{ project?.name }}
+        </h1>
+        <p class="mb-1">
+          <strong class="text-muted">Categories: </strong>
+          <span *ngFor="let category of project.tags; let last = last">
+            {{ category | titlecase }}<ng-container *ngIf="!last">, </ng-container>
+          </span>
+        </p>
+        <p class="mb-1" *ngIf="project?.url">
+          <strong class="text-muted">Website: </strong> <a [href]="project?.url" target="_blank">{{ project?.url }}</a>
+        </p>
+        <p class="small mt-3" [innerHtml]="project.shortDescription">
+
+        </p>
+      </div>
+
+    </div>
+  </div>
+  <h2>
+    Project Overview
+  </h2>
+  <p [innerHtml]="project?.description">
+    <!-- {{ project?.description }} -->
+  </p>
+  <ngx-masonry class="row">
+    <div ngxMasonryItem *ngFor="let img of project?.imagesUrl | slice:1; let i = index" class="col-12 col-sm-6 masonry-item p-2">
+     <a [href]="'/'+ img" target="_blank">
+      <img [src]="img" [alt]="project?.name + 'image ' + (i + 1)" class="rounded-2 overflow-hidden img-fluid m-auto d-block project-img">
+     </a>
+    </div>
+  </ngx-masonry>
+</div>
