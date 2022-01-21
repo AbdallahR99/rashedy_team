@@ -20,6 +20,12 @@
         <p class="mb-1" *ngIf="project?.url">
           <strong class="text-muted">Website: </strong> <a [href]="project?.url" target="_blank">{{ project?.url }}</a>
         </p>
+        <p class="mb-1" *ngIf="project?.googlePlayUrl">
+          <strong class="text-muted">Google Play: </strong> <a [href]="project?.googlePlayUrl" target="_blank">{{ project?.googlePlayUrl }}</a>
+        </p>
+        <p class="mb-1" *ngIf="project?.appStoreUrl">
+          <strong class="text-muted">App Store: </strong> <a [href]="project?.appStoreUrl" target="_blank">{{ project?.googlePlayUrl }}</a>
+        </p>
         <p class="small mt-3" [innerHtml]="project.shortDescription">
 
         </p>
@@ -36,7 +42,7 @@
   <ngx-masonry class="row">
     <div ngxMasonryItem *ngFor="let img of project?.imagesUrl | slice:1; let i = index" class="col-12 col-sm-6 masonry-item p-2">
      <a [href]="'/'+ img" target="_blank">
-      <img [src]="img" [alt]="project?.name + 'image ' + (i + 1)" class="rounded-2 overflow-hidden img-fluid m-auto d-block project-img">
+      <img [src]="img" [alt]="project?.name + 'image ' + (i + 1)" class="rounded-2 overflow-hidden img-fluid m-auto d-block project-img border">
      </a>
     </div>
   </ngx-masonry>

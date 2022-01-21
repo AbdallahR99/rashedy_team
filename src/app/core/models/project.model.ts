@@ -10,6 +10,8 @@ export interface Project {
   mobileOnly?: boolean;
   videosUrl?: (string | SafeResourceUrl)[];
   url?: string;
+  googlePlayUrl?: string;
+  appStoreUrl?: string;
   github?: string;
   tags?: ('web' | 'mobile' | 'backend')[];
 }
