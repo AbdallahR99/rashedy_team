@@ -1,10 +1,10 @@
-import { animate, style } from '@angular/animations';
+// import { animate, style } from '@angular/animations';
 import { ChangeDetectionStrategy, Component, HostListener, OnInit, TemplateRef } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Project } from '@models/project.model';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
-import { NgxMasonryOptions } from 'ngx-masonry';
-import * as AOS from 'aos';
+// import { NgxMasonryOptions } from 'ngx-masonry';
+// import * as AOS from 'aos';
 
 @Component({
   selector: 'app-home-portfolio',
@@ -13,61 +13,24 @@ import * as AOS from 'aos';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomePortfolioComponent implements OnInit {
-  public myOptions: NgxMasonryOptions = {
-    animations: {
-      show: [
-        style({opacity: 0}),
-        animate('500ms ease-in', style({opacity: 1})),
-      ],
-      hide: [
-        style({opacity: '*'}),
-        animate('500ms ease-in', style({opacity: 0})),
-      ]
-    },
+  // public myOptions: NgxMasonryOptions = {
+  //   animations: {
+  //     show: [
+  //       style({opacity: 0}),
+  //       animate('500ms ease-in', style({opacity: 1})),
+  //     ],
+  //     hide: [
+  //       style({opacity: '*'}),
+  //       animate('500ms ease-in', style({opacity: 0})),
+  //     ]
+  //   },
 
 
-  };
+  // };
   modalRef?: BsModalRef;
   filterBy: '' | 'web' | 'mobile' | 'backend' = '';
   selectedProject!: Project;
   projects: Project[] = [
-    {
-      name: 'Business Platform',
-      description: 'Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello ',
-      imagesUrl: ['assets/img/portfolio/business/business_pc.jpeg', 'assets/img/portfolio/business/business.png','assets/img/portfolio//business/business1.png',
-      'assets/img/portfolio//business/business3.png', 'assets/img/portfolio//business/business.png'],
-      mobileImgUrl: 'assets/img/portfolio/business/business_mobile.jpg',
-      videosUrl: ['tgbNymZ7vqY', 'A0GuKuk7IxE'],
-      url: 'https://www.google.com',
-      tags: ['web', 'mobile', 'backend'],
-    },
-    {
-      name: 'Kolo Mashy',
-      description: 'test details',
-      imagesUrl: ['assets/img/portfolio/kolomashy/kolomashy_pc.jpeg', 'assets/img/portfolio/kolomashy/home.png','assets/img/portfolio/kolomashy/kolo1.png',
-              'assets/img/portfolio/kolomashy/kolo2.png', 'assets/img/portfolio/kolomashy/kolo3.png'],
-      mobileImgUrl: 'assets/img/portfolio/kolomashy/kolomashy_mobile.jpg',
-      url: 'https://www.google.com',
-      tags: ['web', 'backend', 'mobile'],
-    },
-    {
-      name: 'Customer Index',
-      description: '',
-      imagesUrl: ['assets/img/portfolio/customerIndex/customerIndex_pc.jpeg', 'assets/img/portfolio/customerIndex/indexx.png', 'assets/img/portfolio/customerIndex/index.png',
-              'assets/img/portfolio/customerIndex/index1.png', 'assets/img/portfolio/customerIndex/index3.png'],
-      url: 'https://www.google.com',
-      tags: ['mobile', 'backend'],
-    },
-    {
-      name: 'RitzLine',
-      description: '',
-      mobileOnly: true,
-      imagesUrl: ['assets/img/portfolio/ritzline/ritzline_pc.jpeg', 'assets/img/portfolio/ritzline/ritzline.png','assets/img/portfolio/ritzline/ritzline1.png',
-                'assets/img/portfolio/ritzline/ritzline2.png', 'assets/img/portfolio/ritzline/ritzline3.png'],
-      mobileImgUrl: 'assets/img/portfolio/ritzline/1.png',
-      url: 'https://www.google.com',
-      tags: [ 'mobile', 'backend'],
-    },
     {
       name: 'Resturants Platform',
       description: '',
@@ -79,13 +42,55 @@ export class HomePortfolioComponent implements OnInit {
       tags: ['web', 'backend'],
     },
     {
+      name: 'Business Platform',
+      description: 'Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello ',
+      imagesUrl: ['assets/img/portfolio/business/business_pc.jpeg', 'assets/img/portfolio/business/business.png','assets/img/portfolio//business/business1.png',
+      'assets/img/portfolio//business/business3.png', 'assets/img/portfolio//business/business.png'],
+      mobileImgUrl: 'assets/img/portfolio/business/business_mobile.jpg',
+      videosUrl: ['tgbNymZ7vqY', 'A0GuKuk7IxE'],
+      url: 'https://www.google.com',
+      tags: ['web', 'mobile', 'backend'],
+    },
+    {
       name: 'Emdady',
       description: '',
-      imagesUrl: ['assets/img/portfolio/emdady/emdady_pc.jpeg'],
+      imagesUrl: ['assets/img/portfolio/emdady/emdady_pc.jpeg', 'assets/img/portfolio/emdady/emdady_mobile.jpeg'],
       mobileImgUrl: 'assets/img/portfolio/emdady/emdady_mobile.jpeg',
       url: '',
       tags: ['mobile', 'web', 'backend'],
     },
+    {
+      name: 'Kolo Mashy',
+      description: 'test details',
+      imagesUrl: ['assets/img/portfolio/kolomashy/kolomashy_pc.jpeg', 'assets/img/portfolio/kolomashy/home.png','assets/img/portfolio/kolomashy/kolo1.png',
+              'assets/img/portfolio/kolomashy/kolo2.png', 'assets/img/portfolio/kolomashy/kolo3.png', 'assets/img/portfolio/emdady/emdady_mobile.jpeg'],
+      mobileImgUrl: 'assets/img/portfolio/kolomashy/kolomashy_mobile.jpg',
+      url: 'https://www.google.com',
+      tags: ['web', 'backend', 'mobile'],
+    },
+
+    {
+      name: 'Customer Index',
+      description: '',
+      imagesUrl: ['assets/img/portfolio/customerIndex/customerIndex_pc.jpeg', 'assets/img/portfolio/customerIndex/indexx.png', 'assets/img/portfolio/customerIndex/index.png',
+              'assets/img/portfolio/customerIndex/index1.png', 'assets/img/portfolio/customerIndex/index3.png',
+              'assets/img/portfolio/customerIndex/customerIndex_mobile.png'],
+      mobileImgUrl: 'assets/img/portfolio/customerIndex/customerIndex_mobile.png',
+      url: 'https://www.google.com',
+      tags: ['mobile', 'backend'],
+    },
+    {
+      name: 'RitzLine',
+      description: '',
+      imagesUrl: ['assets/img/portfolio/ritzline/ritzline_pc.jpeg', 'assets/img/portfolio/ritzline/ritzline.png','assets/img/portfolio/ritzline/ritzline1.png',
+                'assets/img/portfolio/ritzline/ritzline2.png', 'assets/img/portfolio/ritzline/ritzline3.png',
+                'assets/img/portfolio/ritzline/1.png'],
+      mobileImgUrl: 'assets/img/portfolio/ritzline/1.png',
+      url: 'https://www.google.com',
+      tags: [ 'mobile', 'backend'],
+    },
+
+
   ]
   constructor(private modalService: BsModalService,
 
@@ -94,10 +99,10 @@ export class HomePortfolioComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  @HostListener('window:resize', ['$event']) onResize(event: any) {
-    AOS.refreshHard();
-    AOS.init();
-  }
+  // @HostListener('window:resize', ['$event']) onResize(event: any) {
+  //   AOS.refreshHard();
+  //   AOS.init();
+  // }
 
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template, {

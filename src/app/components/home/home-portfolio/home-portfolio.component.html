@@ -24,15 +24,20 @@
       </a>
     </li>
   </ul>
+
+
   <div class="row g-4">
     <div class="col-12 col-md-6 col-lg-6" *ngFor="let project of projects | filter:filterBy:'tags':'contains';let i = index">
-      <div data-aos="fade-up" data-aos-duration="500" data-aos-offset="0" [attr.data-aos-delay]="i * 200">
+      <div data-aos="fade-up" data-aos-duration="500" data-aos-offset="0" >
         <app-home-portfolio-item [project]="project" (onOpenModal)="selectedProject = $event; openModal(infoModal)"></app-home-portfolio-item>
 
       </div>
     </div>
 
   </div>
+
+</div>
+
   <!-- data-aos="fade-left" data-aos-duration="500" data-aos-offset="0" [attr.data-aos-delay]="i * 200" -->
   <!-- <ngx-masonry [options]="myOptions">
 
@@ -68,10 +73,6 @@
    </div>
   </ngx-masonry> -->
 
-
-<div class="p-2" id="portfolio"></div>
-
-</div>
 
 
 

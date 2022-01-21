@@ -21,6 +21,7 @@ export class HomeComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private router: Router,
     @Inject(DOCUMENT) private document: Document) {
+
       // this.activatedRoute.fragment.subscribe((frag: any) => {
       //   this.active_fragment.next(frag);
       // });
@@ -33,7 +34,17 @@ export class HomeComponent implements OnInit {
       document: this.document,
 
       scrollTarget: '.theEnd',
+
     });
+
+    const element = document.getElementById("portfolio");
+
+    const fragment = this.activatedRoute.snapshot.fragment;
+    if (fragment == 'portfolio') {
+      // window.scrollTo(0, (element?.clientTop ?? 1000)  + 400);
+      element?.scrollIntoView({behavior: 'smooth', block: 'end'});
+      // window.scrollBy(0,( element?.clientHeight ?? 100 ) + -800);
+    }
   }
 
   // @HostListener('window:scroll', ['$event'])
