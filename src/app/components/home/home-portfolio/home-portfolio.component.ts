@@ -1,8 +1,8 @@
 // import { animate, style } from '@angular/animations';
-import { ChangeDetectionStrategy, Component, HostListener, OnInit, TemplateRef } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { ChangeDetectionStrategy, Component, OnInit, TemplateRef } from '@angular/core';
+// import { MatDialog } from '@angular/material/dialog';
 import { Project } from '@models/project.model';
-import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+// import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 // import { NgxMasonryOptions } from 'ngx-masonry';
 // import * as AOS from 'aos';
 import { ProjectsService } from '@services/projects/projects.service';
@@ -28,13 +28,13 @@ export class HomePortfolioComponent implements OnInit {
 
 
   // };
-  modalRef?: BsModalRef;
+  // modalRef?: BsModalRef;
   filterBy: '' | 'web' | 'mobile' | 'backend' = '';
   selectedProject!: Project;
   projects!: Project[];
-  constructor(private modalService: BsModalService,
+  constructor(
     private ProjectsService: ProjectsService,
-    public dialog: MatDialog) { }
+    ) { }
 
   ngOnInit(): void {
     this.projects = this.ProjectsService.list();
@@ -45,11 +45,11 @@ export class HomePortfolioComponent implements OnInit {
   //   AOS.init();
   // }
 
-  openModal(template: TemplateRef<any>) {
-    this.modalRef = this.modalService.show(template, {
-      class: 'modal-dialog-centered modal-lg'
-    });
-  }
+  // openModal(template: TemplateRef<any>) {
+  //   this.modalRef = this.modalService.show(template, {
+  //     class: 'modal-dialog-centered modal-lg'
+  //   });
+  // }
 
 }
 

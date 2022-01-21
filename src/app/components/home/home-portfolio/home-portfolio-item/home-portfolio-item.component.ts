@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class HomePortfolioItemComponent implements OnInit {
   @Input() project!: Project;
-  @Output() onOpenModal = new EventEmitter<Project>();
+  // @Output() onOpenModal = new EventEmitter<Project>();
   get routes(): typeof Routes {
     return Routes;
   }
@@ -20,19 +20,19 @@ export class HomePortfolioItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  openModal() {
-    this.onOpenModal.emit(this.project);
-  }
+  // openModal() {
+  //   // this.onOpenModal.emit(this.project);
+  // }
 
-  viewDetails(){
-    this.router.navigate([this.routes.ProjectDetails, this.project.id], {
-      state:{
-        data: {
-          project: this.project,
-        },
-      },
+  // viewDetails(){
+  //   this.router.navigate([this.routes.ProjectDetails, this.project.id], {
+  //     state:{
+  //       data: {
+  //         project: this.project,
+  //       },
+  //     },
 
-    });
-  }
+  //   });
+  // }
 
 }

@@ -13,6 +13,8 @@ import { NgxMasonryOptions } from 'ngx-masonry';
 export class ProjectDetailsComponent implements OnInit {
   project!: Project;
   isError = false;
+  filterBy: '' | 'web' | 'mobile' = 'web';
+
   constructor(private activatedRoute: ActivatedRoute, private projectsService: ProjectsService,
      private titleService: Title) {
     this.project = this.activatedRoute.snapshot.data['project'];
@@ -31,6 +33,7 @@ export class ProjectDetailsComponent implements OnInit {
     this.setTitle();
     // console.log(this.project);
   }
+
 
   setTitle(): void {
     this.titleService.setTitle(this.project.name);

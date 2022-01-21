@@ -48,7 +48,7 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
   ],
   providers: [
-    { provide: LAZYLOAD_IMAGE_HOOKS, useClass: ScrollHooks }
+    // { provide: LAZYLOAD_IMAGE_HOOKS, useClass: ScrollHooks }
     // ScreenTrackingService,
     // UserTrackingService
   ],

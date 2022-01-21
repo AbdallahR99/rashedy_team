@@ -6,7 +6,7 @@ export interface Project {
   shortDescription?: string;
   description: string;
   imagesUrl: string[];
-  mobileImgUrl?: string;
+  mobileImgUrls?: string[];
   mobileOnly?: boolean;
   videosUrl?: (string | SafeResourceUrl)[];
   url?: string;

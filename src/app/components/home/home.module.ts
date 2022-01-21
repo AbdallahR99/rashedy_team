@@ -11,11 +11,10 @@ import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
 import { HomeSkillCardComponent } from './home-skills/home-skill-card/home-skill-card.component';
 import { LazyLoadImageModule, LAZYLOAD_IMAGE_HOOKS, ScrollHooks } from 'ng-lazyload-image';
 import { FilterModule } from '@pipes/filter/filter.module';
-import { ModalModule } from 'ngx-bootstrap/modal';
+// import { ModalModule } from 'ngx-bootstrap/modal';
 import { NgxMasonryModule } from 'ngx-masonry';
-import { HomePortfolioModalComponent } from './home-portfolio/home-portfolio-modal/home-portfolio-modal.component';
-import {MatDialogModule} from '@angular/material/dialog';
-import { CarouselModule } from 'ngx-bootstrap/carousel';
+// import {MatDialogModule} from '@angular/material/dialog';
+// import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { HomePortfolioItemComponent } from './home-portfolio/home-portfolio-item/home-portfolio-item.component';
 
 
@@ -27,7 +26,6 @@ import { HomePortfolioItemComponent } from './home-portfolio/home-portfolio-item
     HomeSkillsComponent,
     HomePortfolioComponent,
     HomeSkillCardComponent,
-    HomePortfolioModalComponent,
     HomePortfolioItemComponent,
   ],
   imports: [
@@ -37,9 +35,9 @@ import { HomePortfolioItemComponent } from './home-portfolio/home-portfolio-item
     LazyLoadImageModule,
     FilterModule,
     NgxMasonryModule ,
-    ModalModule.forRoot(),
-    CarouselModule ,
-    MatDialogModule,
+    // ModalModule.forRoot(),
+    // CarouselModule ,
+    // MatDialogModule,
   ],
   providers: [
     { provide: LAZYLOAD_IMAGE_HOOKS, useClass: ScrollHooks }

@@ -29,7 +29,7 @@
   <div class="row g-4">
     <div class="col-12 col-md-6 col-lg-6" *ngFor="let project of projects | filter:filterBy:'tags':'contains';let i = index">
       <div data-aos="fade-up" data-aos-duration="500" data-aos-offset="0" >
-        <app-home-portfolio-item [project]="project" (onOpenModal)="selectedProject = $event; openModal(infoModal)"></app-home-portfolio-item>
+        <app-home-portfolio-item [project]="project"></app-home-portfolio-item>
 
       </div>
     </div>
@@ -79,13 +79,4 @@
 
 
 
-<ng-template #infoModal>
-  <!-- <div class="modal-header">
-    <h4 class="modal-title pull-left">Modal</h4>
-    <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
-      <span aria-hidden="true" class="visually-hidden">&times;</span>
-    </button>
-  </div> -->
-  <app-home-portfolio-modal [project]="selectedProject" (closeModal)="modalRef?.hide()"></app-home-portfolio-modal>
 
-</ng-template>
