@@ -31,6 +31,9 @@ export class ProjectDetailsComponent implements OnInit {
       }
     }
     this.setTitle();
+    if (this.project.imagesUrl?.length < 2) {
+      this.filterBy = 'mobile';
+    }
     // console.log(this.project);
   }
 
